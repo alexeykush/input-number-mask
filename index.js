@@ -16,9 +16,11 @@ const init = (input, mask) => {
                     if (entity !== "_") {
                         process += entity;
                         if(char === entity) pointer++;
-                    } else {
-                        if(/\d/.test(char)) process += char;
+                    } else if(/\d/.test(char)) {
+                        process += char;
                         pointer++;
+                    } else {
+                        break;
                     }
                 }
             }
